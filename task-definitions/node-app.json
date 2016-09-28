@@ -1,0 +1,31 @@
+[
+  {
+    "name": "nclouds-app-server",
+    "image": "rishabhg3/app-deployment",
+    "cpu": 20,
+    "links": [
+        "nclouds-redis:redis"
+     ],
+    "memory": 512,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 4000,
+        "hostPort": 80
+      }
+    ]
+  },
+  {
+    "name": "nclouds-redis",
+    "image": "redis",
+    "cpu": 20,
+    "memory": 150,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 6379,
+        "hostPort": 6379
+      }
+    ]
+  }
+]
